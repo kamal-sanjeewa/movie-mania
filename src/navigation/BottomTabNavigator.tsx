@@ -2,17 +2,12 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { colors } from 'assets/constants/colors';
 import { Platform, StyleSheet } from 'react-native';
-import DeviceInfo from 'react-native-device-info';
 import { Screens } from './constants/Screens.constants';
 import DashboardScreen from 'screens/DashboardScreen';
 import WatchListScreen from 'screens/WatchListScreen';
 import ProfileScreen from 'screens/ProfileScreen';
 
 const BottomTab = createBottomTabNavigator();
-const iPhoneSE =
-  Platform.OS === 'ios' &&
-  !DeviceInfo.hasNotch() &&
-  !DeviceInfo.hasDynamicIsland();
 
 export const BottomTabNavigator = () => {
   return (
@@ -58,16 +53,13 @@ export const BottomTabNavigator = () => {
 
 const styles = StyleSheet.create({
   // labelBase: {
-  //   // ...sunshineStyles.regularSmall,
   //   color: colors.primaryColor,
   //   marginTop: 6,
   // },
   // labelFocused: {
-  //   // ...sunshineStyles.boldPro,
   //   color: colors.almostBlack,
   // },
   tabBar: {
-    // ...sunshineStyles.shadowTabbar,
     height: 86,
     backgroundColor: colors.almostBlack,
     borderTopWidth: 0,

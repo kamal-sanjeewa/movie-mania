@@ -25,7 +25,7 @@ export interface TVShow extends Media {
   first_air_date: string;
 }
 
-export interface TrendingMovieResponse {
+export interface MovieResponse {
   page: number;
   results: Media[];
   total_pages: number;
