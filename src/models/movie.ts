@@ -1,4 +1,4 @@
-export interface Movie {
+export interface Media {
   id: number;
   backdrop_path: string;
   title: string;
@@ -10,15 +10,24 @@ export interface Movie {
   original_language: string;
   genre_ids: number[];
   popularity: number;
-  release_date: string;
   video: boolean;
   vote_average: number;
   vote_count: number;
 }
 
+export interface Movie extends Media {
+  media_type: 'movie';
+  release_date: string;
+}
+
+export interface TVShow extends Media {
+  media_type: 'tv';
+  first_air_date: string;
+}
+
 export interface TrendingMovieResponse {
   page: number;
-  results: Movie[];
+  results: Media[];
   total_pages: number;
   total_results: number;
 }

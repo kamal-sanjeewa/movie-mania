@@ -4,5 +4,12 @@
     "username": "Username",
     "password": "Password",
     "login": "Login"
+  },
+  "dashboard": {
+    "trendingMovies": "Trending Movies",
+    "trendingTV": "Trending TV",
+    "releaseDate": "Release Date: {{date}}",
+    "firstAirDate": "First Air Date: {{date}}",
+    "rating": "Rating: {{rating}} ({{votes}} votes)"
   }
 }
