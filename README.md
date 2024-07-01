@@ -53,12 +53,21 @@ Replace .env file API_TOKEN value and run the project again.
 
 
 ## TODO: Configure API KEY to the project
+
 Show Movie Details
+
 Show Movie Reviews
+
 Show Rating
+
 Post Rating
+
 Delete Rating
+
 Add to Watchlist
+
 Search mechanism for movies
+
 User Profile
+
 Logout
