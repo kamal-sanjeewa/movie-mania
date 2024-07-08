@@ -1,11 +1,13 @@
+import { createAction } from '@reduxjs/toolkit';
 import { AuthToken } from 'models/authToken';
 import { AllActionsOf, createBooleanAction, createTypedAction } from 'utils/createActionsUtils';
 
 export enum AuthenticationActionType {
-  AUTHENTICATION_DATA = '@movie/AUTHENTICATION_DATA',
-  AUTHENTICATION_DATA_LOADING = '@movie/AUTHENTICATION_DATA_LOADING',
-  LOGIN_TOKEN_DATA = '@movie/LOGIN_TOKEN_DATA',
-  LOGIN_TOKEN_DATA_LOADING = '@movie/LOGIN_TOKEN_DATA_LOADING',
+  UNSET_TOKEN = '@auth/UNSET_TOKEN',
+  AUTHENTICATION_DATA = '@auth/AUTHENTICATION_DATA',
+  AUTHENTICATION_DATA_LOADING = '@auth/AUTHENTICATION_DATA_LOADING',
+  LOGIN_TOKEN_DATA = '@auth/LOGIN_TOKEN_DATA',
+  LOGIN_TOKEN_DATA_LOADING = '@auth/LOGIN_TOKEN_DATA_LOADING',
 }
 
 export const AuthenticationAction = {
@@ -13,6 +15,8 @@ export const AuthenticationAction = {
   authTokenLoading: createBooleanAction(AuthenticationActionType.AUTHENTICATION_DATA_LOADING),
   loginTokenDataFetched: createTypedAction<AuthToken>()(AuthenticationActionType.LOGIN_TOKEN_DATA),
   loginTokenDataLoading: createBooleanAction(AuthenticationActionType.LOGIN_TOKEN_DATA_LOADING),
+  unsetToken: createAction(AuthenticationActionType.UNSET_TOKEN),
 };
 
 export type AuthenticationAction = AllActionsOf<typeof AuthenticationAction>;
+export type UnsetTokenAction = ReturnType<typeof AuthenticationAction.unsetToken>;

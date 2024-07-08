@@ -9,9 +9,9 @@ const { store, persistor } = configureStore();
 const App = () => {
   return (
     <Provider store={store}>
-      {/* <PersistGate persistor={persistor}> */}
+      <PersistGate persistor={persistor}>
         <MovieMania />
-      {/* </PersistGate> */}
+      </PersistGate>
     </Provider>
   );
 };

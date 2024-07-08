@@ -14,5 +14,13 @@
   },
   "watchList": {
     "title": "Watch List"
+  },
+  "profile": {
+    "title": "Profile",
+    "name": "Username : {{username}}",
+    "id": "ID : {{id}}",
+    "language": "Language : {{language}}",
+    "country": "Country : {{country}}",
+    "logout": "Logout"
   }
 }

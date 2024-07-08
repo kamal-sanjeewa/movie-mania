@@ -6,6 +6,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { requestNewToken, requestTokenWithLogin } from 'redux/thunks/authentication';
 import { useDispatch, useSelector } from 'react-redux';
 import { State } from 'redux/reducers';
+import { movieManiaStyles } from 'assets/styles/movieManiaStyles';
 
 const SignIn = () => {
   const dispatch = useDispatch();
@@ -50,8 +51,8 @@ const SignIn = () => {
           onChangeText={setPassword}
           autoCorrect={false}
         />
-        <TouchableOpacity style={styles.button} onPress={onLogin}>
-          <Text style={styles.buttonText}>{strings('signIn.login')}</Text>
+        <TouchableOpacity style={movieManiaStyles.buttonSolid} onPress={onLogin}>
+          <Text style={movieManiaStyles.buttonSolidText}>{strings('signIn.login')}</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -87,18 +88,6 @@ const styles = StyleSheet.create({
     color: colors.white,
     borderWidth: 1,
     borderRadius: 7,
-  },
-  button: {
-    backgroundColor: colors.primaryColor,
-    height: 50,
-    borderRadius: 25,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 18,
-    fontWeight: 'bold',
   },
 });
 

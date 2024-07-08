@@ -1,6 +1,10 @@
 import { createWithDefault } from './createWithDefault';
 import { AuthToken } from 'models/authToken';
-import { AuthenticationAction, AuthenticationActionType } from 'redux/actions/authentication';
+import {
+  AuthenticationAction,
+  AuthenticationActionType,
+  UnsetTokenAction,
+} from 'redux/actions/authentication';
 
 export interface TokenState {
   tokenData?: AuthToken;
@@ -16,8 +20,16 @@ export const tokenInitialState: TokenState = {
   loginTokenDataLoading: false,
 };
 
-export function authenticationReducer(state: TokenState, action: AuthenticationAction): TokenState {
+export function authenticationReducer(
+  state: TokenState,
+  action: AuthenticationAction | UnsetTokenAction,
+): TokenState {
   switch (action.type) {
+    case AuthenticationActionType.UNSET_TOKEN:
+      return {
+        ...tokenInitialState,
+      };
+
     case AuthenticationActionType.AUTHENTICATION_DATA:
       return {
         ...state,

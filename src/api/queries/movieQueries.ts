@@ -24,4 +24,5 @@ const getWatchListMovies = (page: number) => {
 
 export const movieQueries = {
   getTrending,
+  getWatchListMovies,
 };
