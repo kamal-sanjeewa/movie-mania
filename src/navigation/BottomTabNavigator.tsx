@@ -14,10 +14,7 @@ export const BottomTabNavigator = () => {
     <BottomTab.Navigator
       backBehavior={'initialRoute'}
       screenOptions={{
-        tabBarStyle: [
-          styles.tabBar,
-          Platform.OS === 'android' && styles.tabBarAndroid,
-        ],
+        tabBarStyle: [styles.tabBar, Platform.OS === 'android' && styles.tabBarAndroid],
         tabBarActiveTintColor: colors.primaryColor,
         tabBarInactiveTintColor: colors.lightGrey,
         tabBarHideOnKeyboard: true,

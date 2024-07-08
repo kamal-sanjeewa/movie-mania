@@ -13,11 +13,4 @@ export interface Interceptor {
   type: InterceptorState;
 }
 
-export type BodyType =
-  | string
-  | number
-  | Blob
-  | Array<number>
-  | boolean
-  | Array<string>
-  | object;
+export type BodyType = string | number | Blob | Array<number> | boolean | Array<string> | object;

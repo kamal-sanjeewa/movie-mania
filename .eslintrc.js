@@ -3,6 +3,6 @@ module.exports = {
   extends: ['@react-native'],
   rules: {
     'react-native/no-unused-styles': 2,
-    'no-duplicate-imports': 2
+    'no-duplicate-imports': 2,
   },
 };

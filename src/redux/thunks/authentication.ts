@@ -28,9 +28,7 @@ export function requestTokenWithLogin(
   return async dispatch => {
     dispatch(AuthenticationAction.loginTokenDataLoading(true));
     try {
-      const { data } = await authenticationQueries.tokenValidateWithLogin(
-        payload,
-      );
+      const { data } = await authenticationQueries.tokenValidateWithLogin(payload);
       dispatch(AuthenticationAction.loginTokenDataFetched(data));
       dispatch(AuthenticationAction.loginTokenDataLoading(false));
     } catch (e) {

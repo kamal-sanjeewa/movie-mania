@@ -1,28 +1,22 @@
 import { createWithDefault } from './createWithDefault';
 import { AuthToken } from 'models/authToken';
-import {
-  AuthenticationAction,
-  AuthenticationActionType,
-} from 'redux/actions/authentication';
+import { AuthenticationAction, AuthenticationActionType } from 'redux/actions/authentication';
 
-export interface PopularState {
+export interface TokenState {
   tokenData?: AuthToken;
   tokenLoading: boolean;
   loginTokenData?: AuthToken;
   loginTokenDataLoading: boolean;
 }
 
-export const popularInitialState: PopularState = {
+export const tokenInitialState: TokenState = {
   tokenData: undefined,
   loginTokenData: undefined,
   tokenLoading: false,
   loginTokenDataLoading: false,
 };
 
-export function authenticationReducer(
-  state: PopularState,
-  action: AuthenticationAction,
-): PopularState {
+export function authenticationReducer(state: TokenState, action: AuthenticationAction): TokenState {
   switch (action.type) {
     case AuthenticationActionType.AUTHENTICATION_DATA:
       return {
@@ -53,7 +47,4 @@ export function authenticationReducer(
   }
 }
 
-export const authentication = createWithDefault(
-  authenticationReducer,
-  popularInitialState,
-);
+export const authentication = createWithDefault(authenticationReducer, tokenInitialState);

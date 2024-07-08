@@ -25,9 +25,11 @@ export interface TVShow extends Media {
   first_air_date: string;
 }
 
+export type MediaItem = Movie | TVShow;
+
 export interface MovieResponse {
   page: number;
-  results: Media[];
+  results: MediaItem[];
   total_pages: number;
   total_results: number;
 }

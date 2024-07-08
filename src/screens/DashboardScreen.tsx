@@ -1,7 +1,7 @@
 import { colors } from 'assets/constants/colors';
 import { strings } from 'assets/locales/i18n';
 import useFilteredMedia from 'hooks/useFilteredMedia';
-import { Movie, TVShow } from 'models/movie';
+import { MediaItem } from 'models/movie';
 import React, { useEffect } from 'react';
 import { Text, StyleSheet, SafeAreaView, Image, View } from 'react-native';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
@@ -14,9 +14,9 @@ const DashboardScreen = () => {
 
   useEffect(() => {
     dispatch(fetchTrendingData('day'));
-  }, []);
+  }, [dispatch]);
 
-  const renderMovieItem = ({ item }: { item: Movie | TVShow }) => {
+  const renderMovieItem = ({ item }: { item: MediaItem }) => {
     return (
       <View style={styles.card}>
         <Image

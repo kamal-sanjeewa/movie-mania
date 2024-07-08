@@ -1,8 +1,4 @@
-import {
-  ActionFromReducer,
-  ThunkDispatch,
-  combineReducers,
-} from '@reduxjs/toolkit';
+import { ActionFromReducer, ThunkDispatch, combineReducers } from '@reduxjs/toolkit';
 import { movie } from './movie';
 import { authentication } from './authentication';
 

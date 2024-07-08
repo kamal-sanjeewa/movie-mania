@@ -3,10 +3,7 @@ import { View, Text, StyleSheet, SafeAreaView, TextInput } from 'react-native';
 import { strings } from 'assets/locales/i18n';
 import { colors } from 'assets/constants/colors';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import {
-  requestNewToken,
-  requestTokenWithLogin,
-} from 'redux/thunks/authentication';
+import { requestNewToken, requestTokenWithLogin } from 'redux/thunks/authentication';
 import { useDispatch, useSelector } from 'react-redux';
 import { State } from 'redux/reducers';
 
@@ -14,9 +11,7 @@ const SignIn = () => {
   const dispatch = useDispatch();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const requestToken = useSelector(
-    (state: State) => state.authentication.tokenData?.request_token,
-  );
+  const requestToken = useSelector((state: State) => state.authentication.tokenData?.request_token);
 
   useEffect(() => {
     dispatch(requestNewToken());

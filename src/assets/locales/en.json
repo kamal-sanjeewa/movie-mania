@@ -11,5 +11,8 @@
     "releaseDate": "Release Date: {{date}}",
     "firstAirDate": "First Air Date: {{date}}",
     "rating": "Rating: {{rating}} ({{votes}} votes)"
+  },
+  "watchList": {
+    "title": "Watch List"
   }
 }

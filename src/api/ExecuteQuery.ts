@@ -1,8 +1,4 @@
-import axios, {
-  AxiosInstance,
-  AxiosResponse,
-  InternalAxiosRequestConfig,
-} from 'axios';
+import axios, { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import { BodyType, FetchMethod, InterceptorState } from './types';
 
 type RequestBody = Record<string, BodyType> | FormData | string;
@@ -22,9 +18,7 @@ const createAxiosInstance = (config: ExecuteQueryConfig): AxiosInstance => {
   instance.interceptors.request.use(
     config.requestInterceptors.FULLFILLED as (
       value: InternalAxiosRequestConfig<any>,
-    ) =>
-      | InternalAxiosRequestConfig<any>
-      | Promise<InternalAxiosRequestConfig<any>>,
+    ) => InternalAxiosRequestConfig<any> | Promise<InternalAxiosRequestConfig<any>>,
     config.requestInterceptors.REJECTED,
   );
 
