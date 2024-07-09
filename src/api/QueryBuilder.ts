@@ -5,15 +5,11 @@ type InterceptorCastToNewPayload<TPayload, TResponse> = TResponse extends null
   ? TPayload
   : TResponse;
 
-export const formatObjectToArray = (
-  object: Record<string, any>,
-): [string, any][] => {
+export const formatObjectToArray = (object: Record<string, any>): [string, any][] => {
   return Object.keys(object).map(key => [key, object[key]]);
 };
 
-export const wrapObjectInArray = (
-  object: Record<string, any>,
-): Record<string, any>[] => {
+export const wrapObjectInArray = (object: Record<string, any>): Record<string, any>[] => {
   return [object];
 };
 

@@ -14,14 +14,9 @@ export const RootNavigator = () => {
   );
 
   return (
-    <RootStack.Navigator
-      screenOptions={{ headerShown: false, headerMode: 'screen' }}
-    >
+    <RootStack.Navigator screenOptions={{ headerShown: false, headerMode: 'screen' }}>
       {isLoggedIn ? (
-        <RootStack.Screen
-          name={Navigators.BottomTab}
-          component={BottomTabNavigator}
-        />
+        <RootStack.Screen name={Navigators.BottomTab} component={BottomTabNavigator} />
       ) : (
         <RootStack.Screen name={Navigators.Login} component={LoginNavigator} />
       )}

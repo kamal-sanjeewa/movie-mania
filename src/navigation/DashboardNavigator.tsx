@@ -11,10 +11,7 @@ export const LoginNavigator = () => {
       initialRouteName={Screens.SignIn}
       screenOptions={{ headerShown: false }}
     >
-      <DashBoardStack.Screen
-        name={Screens.DashboardScreen}
-        component={DashboardScreen}
-      />
+      <DashBoardStack.Screen name={Screens.DashboardScreen} component={DashboardScreen} />
     </DashBoardStack.Navigator>
   );
 };
