@@ -1,6 +1,6 @@
 import { colors } from 'assets/constants/colors';
 import { strings } from 'assets/locales/i18n';
-import useFilteredMedia from 'hooks/useFilteredMedia';
+import useFilteredMedia from 'hooks/useFilteredMedia.hook';
 import { MediaItem } from 'models/movie';
 import React, { useEffect } from 'react';
 import { Text, StyleSheet, SafeAreaView, Image, View } from 'react-native';
